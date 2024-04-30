@@ -1,4 +1,4 @@
-# open_reply_proj
+# Currency_rate
 A simple rate converter mobile application built with Flutter. This app allows users to check the rate between different currencies using real-time exchange rates.
 
 ## Features
