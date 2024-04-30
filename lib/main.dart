@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => Currency(),
+      create: (context) => CurrencyResponse(),
       child: const MyApp(),
     ),
   );

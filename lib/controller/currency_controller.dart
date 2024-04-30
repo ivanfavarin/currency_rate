@@ -9,16 +9,18 @@ class CurrencyController {
     currentCurrency = newCurrency;
 
     List<ConversionRate> newCurrencyValues =
-        context.read<Currency>().conversionRates;
+        context.read<CurrencyResponse>().conversionRates;
     for (var currency in newCurrencyValues) {
       currency.value = (1 / newCurrency.valueInDollar) * currency.valueInDollar;
     }
-    context.read<Currency>().changeConversionRates(rates: newCurrencyValues);
+    context
+        .read<CurrencyResponse>()
+        .changeConversionRates(rates: newCurrencyValues);
   }
 
   Future<void> loadRates(BuildContext context) async {
     context
-        .read<Currency>()
+        .read<CurrencyResponse>()
         .loadRates()
         .then((value) => currentCurrency = value);
   }

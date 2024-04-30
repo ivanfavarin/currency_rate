@@ -19,11 +19,11 @@ class _CurrencyViewState extends State<CurrencyView> {
   @override
   Widget build(BuildContext context) {
     //load the rates automatically if haven´t already
-    if (context.read<Currency>().conversionRates.isEmpty) {
+    if (context.read<CurrencyResponse>().conversionRates.isEmpty) {
       _controller.loadRates(context);
     }
 
-    return Consumer<Currency>(
+    return Consumer<CurrencyResponse>(
       builder: (context, value, child) => Scaffold(
         appBar: AppBar(
           title: Text(

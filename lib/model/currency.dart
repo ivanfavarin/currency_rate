@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_reply_proj/http/webclients/currency_webclient.dart';
 
-class Currency extends ChangeNotifier {
+class CurrencyResponse extends ChangeNotifier {
   List<ConversionRate> conversionRates = <ConversionRate>[];
 
   List<ConversionRate> getFromJson(Map<String, dynamic> json) {
@@ -13,7 +13,6 @@ class Currency extends ChangeNotifier {
       ));
     });
 
-    conversionRates.removeWhere((item) => item.currency == 'ALL');
     conversionRates.sort((a, b) => a.currency.compareTo(b.currency));
     return conversionRates;
   }
